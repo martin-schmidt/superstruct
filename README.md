@@ -1,8 +1,24 @@
 # Superstruct
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/superstruct`. To experiment with that code, run `bin/console` for an interactive prompt.
+SuperStruct overwrites the standard {Struct} initializer to add the ability to
+create an instance from a {Hash} of parameters.
 
-TODO: Delete this and the text above, and describe your gem
+Compared with the original version, it provides the following additional
+features:
+  * ability to initialize an instance from Hash
+  * ability to pass a block on creation
+
+  @overload initialize({ Symbol => Object })
+    Initializes the object with a key/value hash.
+    @param [{ Symbol => Object }] values
+    @return [SuperStruct]
+  @overload initialize([ value1, value1, ... ])
+    Initializes the object with given values.
+    @param [Array] values
+    @return [SuperStruct]
+  @overload initialize(value1, value1, ...)
+    Initializes the object with given values.
+    @return [SuperStruct]
 
 ## Installation
 
@@ -22,7 +38,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+  class Band < SuperStruct.new(:name, :genre)
+  end
+  Band.new({name: 'The Beatles', genre: 'Rock'})
+  => #<struct Band name="The Beatles", genre="Rock">
+
 
 ## Development
 
@@ -32,8 +52,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/superstruct.
-
+Bug reports and pull requests are welcome on GitHub at
+https://github.com/martin-schmidt/superstruct.
 
 ## License
 
