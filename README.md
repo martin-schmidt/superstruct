@@ -34,17 +34,19 @@ end
 Band.new({name: 'The Beatles', genre: 'Rock'})
 # => #<struct Band name="The Beatles", genre="Rock">
 ```
-    @overload initialize({ Symbol => Object })
-      Initializes the object with a key/value hash.
-      @param [{ Symbol => Object }] values
-      @return [SuperStruct]
-    @overload initialize([ value1, value1, ... ])
-      Initializes the object with given values.
-      @param [Array] values
-      @return [SuperStruct]
-    @overload initialize(value1, value1, ...)
-      Initializes the object with given values.
-      @return [SuperStruct]
+```ruby
+@overload initialize({ Symbol => Object })
+  Initializes the object with a key/value hash.
+  @param [{ Symbol => Object }] values
+  @return [SuperStruct]
+@overload initialize([ value1, value1, ... ])
+  Initializes the object with given values.
+  @param [Array] values
+  @return [SuperStruct]
+@overload initialize(value1, value1, ...)
+  Initializes the object with given values.
+  @return [SuperStruct]
+```
 
 ## Development
 
