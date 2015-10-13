@@ -28,6 +28,12 @@ Or install it yourself as:
 
 ## Usage
 
+```ruby
+class Band < SuperStruct.new(:name, :genre)
+end
+Band.new({name: 'The Beatles', genre: 'Rock'})
+# => #<struct Band name="The Beatles", genre="Rock">
+```
     @overload initialize({ Symbol => Object })
       Initializes the object with a key/value hash.
       @param [{ Symbol => Object }] values
@@ -39,12 +45,6 @@ Or install it yourself as:
     @overload initialize(value1, value1, ...)
       Initializes the object with given values.
       @return [SuperStruct]
-
-```ruby
-class Band < SuperStruct.new(:name, :genre)
-end
-Band.new({name: 'The Beatles', genre: 'Rock'})
-# => #<struct Band name="The Beatles", genre="Rock">
 
 ## Development
 
