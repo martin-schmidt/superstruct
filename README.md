@@ -8,7 +8,7 @@ features:
   * ability to initialize an instance from Hash
   * ability to pass a block on creation
 
-SuperStruct written by Simone Carletti for [whois](https://github.com/weppos/whois)
+SuperStruct was written by Simone Carletti for [whois](https://github.com/weppos/whois)
 
 ## Installation
 
