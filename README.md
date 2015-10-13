@@ -1,4 +1,4 @@
-# Superstruct
+# SuperStruct
 
 SuperStruct overwrites the standard {Struct} initializer to add the ability to
 create an instance from a {Hash} of parameters.
@@ -8,17 +8,7 @@ features:
   * ability to initialize an instance from Hash
   * ability to pass a block on creation
 
-  @overload initialize({ Symbol => Object })
-    Initializes the object with a key/value hash.
-    @param [{ Symbol => Object }] values
-    @return [SuperStruct]
-  @overload initialize([ value1, value1, ... ])
-    Initializes the object with given values.
-    @param [Array] values
-    @return [SuperStruct]
-  @overload initialize(value1, value1, ...)
-    Initializes the object with given values.
-    @return [SuperStruct]
+SuperStruct written by Simone Carletti for [whois](https://github.com/weppos/whois)
 
 ## Installation
 
@@ -38,11 +28,23 @@ Or install it yourself as:
 
 ## Usage
 
-  class Band < SuperStruct.new(:name, :genre)
-  end
-  Band.new({name: 'The Beatles', genre: 'Rock'})
-  => #<struct Band name="The Beatles", genre="Rock">
+    @overload initialize({ Symbol => Object })
+      Initializes the object with a key/value hash.
+      @param [{ Symbol => Object }] values
+      @return [SuperStruct]
+    @overload initialize([ value1, value1, ... ])
+      Initializes the object with given values.
+      @param [Array] values
+      @return [SuperStruct]
+    @overload initialize(value1, value1, ...)
+      Initializes the object with given values.
+      @return [SuperStruct]
 
+```ruby
+class Band < SuperStruct.new(:name, :genre)
+end
+Band.new({name: 'The Beatles', genre: 'Rock'})
+# => #<struct Band name="The Beatles", genre="Rock">
 
 ## Development
 
