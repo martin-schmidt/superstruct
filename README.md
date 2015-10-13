@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/martin-schmidt/superstruct.png)](https://travis-ci.org/martin-schmidt/superstruct)
+
 # SuperStruct
 
 SuperStruct overwrites the standard {Struct} initializer to add the ability to
